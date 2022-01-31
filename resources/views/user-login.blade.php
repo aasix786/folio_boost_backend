@@ -33,7 +33,7 @@
                                     <form method="POST" action="{{ route('login') }}">
                                         @csrf
                                         <div class="form-head">
-                                            <a href="{{url('/')}}" class="logo"><img src="assets/images/logo.svg" class="img-fluid" alt="logo"></a>
+                                            <a href="{{url('/')}}" class="logo"><img src="{{asset('assets/logo.png')}}" class="img-fluid" alt="logo"></a>
                                         </div>                                        
                                         <h4 class="text-primary my-4">Log in !</h4>
                                         <div class="form-group">
@@ -67,14 +67,7 @@
                                         {{--</div>                          --}}
                                       <button type="submit" class="btn btn-success btn-lg btn-block font-18">Log in</button>
                                     </form>
-                                    <div class="login-or">
-                                        <h6 class="text-muted">OR</h6>
-                                    </div>
-                                    <div class="social-login text-center">
-                                        <button type="submit" class="btn btn-primary rounded-circle font-18"><i class="ri-facebook-line"></i></button>
-                                        <button type="submit" class="btn btn-danger rounded-circle font-18 ml-2"><i class="ri-google-line"></i></button>
-                                    </div>
-                                    <p class="mb-0 mt-3">Don't have a account? <a href="{{url('/user-register')}}">Sign up</a></p>
+
                                 </div>
                             </div>
                         </div>

@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+Route::post('register', [\App\Http\Controllers\ApiControllers\AuthController::class, 'register']);
+Route::post('login', [\App\Http\Controllers\ApiControllers\AuthController::class, 'login']);
+Route::get('get-upcoming-contests', [\App\Http\Controllers\ApiControllers\ContestController::class, 'index']);
+Route::post('get-contests-details', [\App\Http\Controllers\ApiControllers\ContestController::class, 'contest_details']);
+Route::post('submit-contest', [\App\Http\Controllers\ApiControllers\ContestController::class, 'submit_contest']);
