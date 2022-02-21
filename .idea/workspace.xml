@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bd2af37-33e6-4053-8d3f-1fde9d594545" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="27" column="59" lean-forward="true" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-              <folding>
-                <element signature="e#55#91#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="221">
+              <caret line="160" column="185" selection-start-line="160" selection-start-column="185" selection-end-line="160" selection-end-column="185" />
             </state>
           </provider>
         </entry>
@@ -59,7 +55,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>basic</find>
       <find>add-c</find>
       <find>default se</find>
       <find>name=&quot;</find>
@@ -89,6 +84,7 @@
       <find>user_id</find>
       <find>ContestCoi</find>
       <find>upcom</find>
+      <find>$selected_coins</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -352,12 +348,12 @@
       <workItem from="1645426749087" duration="602000" />
       <workItem from="1645438227236" duration="595000" />
       <workItem from="1645462424633" duration="2238000" />
-      <workItem from="1645475414613" duration="968000" />
+      <workItem from="1645475414613" duration="1355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36823000" />
+    <option name="totallyTimeSpent" value="37210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="801" extended-state="0" />
@@ -578,11 +574,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="27" column="59" lean-forward="true" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
-          <folding>
-            <element signature="e#55#91#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="160" column="185" selection-start-line="160" selection-start-column="185" selection-end-line="160" selection-end-column="185" />
         </state>
       </provider>
     </entry>

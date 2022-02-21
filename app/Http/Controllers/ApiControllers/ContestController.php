@@ -155,10 +155,10 @@ $my_contests = [];
                             'symbol' => $selected_coin['symbol'],
                             'coin_id' => $selected_coin['id'],
                             'name' => $selected_coin['name'],
-                            'price' => @$selected_coin['quote']['USD']['price'],
+                            'price' => @$selected_coin['quote']['USD']['price'] ? @$selected_coin['quote']['USD']['price'] : @$selected_coin['price'],
                             'cmc_rank' => $selected_coin['cmc_rank'],
-                            'market_cap' => @$selected_coin['quote']['USD']['market_cap'],
-                            'market_cap_dominance' => @$selected_coin['quote']['USD']['market_cap_dominance'],
+                            'market_cap' => @$selected_coin['quote']['USD']['market_cap'] ? $selected_coin['quote']['USD']['market_cap'] : $selected_coin['market_cap'],
+                            'market_cap_dominance' => @$selected_coin['quote']['USD']['market_cap_dominance'] ? @$selected_coin['quote']['USD']['market_cap_dominance'] : @$selected_coin['market_cap_dominance'],
                         ]);
                     }
                     $response = [
