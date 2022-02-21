@@ -17,7 +17,7 @@ class ContestController extends Controller
         if($user_id){
             $contests_arr = [];
             $current_time = Carbon::now();
-            $contests = Contest::query()->where('status',0)->where('start_time','<=', $current_time)->get();
+            $contests = Contest::query()->where('status',0)->whereDate('start_time','>=', $current_time)->get();
             if (sizeof($contests) > 0){
                 foreach ($contests as $contest){
                     $if_submitted = ContestSubmission::query()
