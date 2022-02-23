@@ -24,9 +24,16 @@ class ContestController extends Controller
                         ->where('user_id',$user_id)
                         ->where('contest_id',$contest->id)
                         ->first();
-                    if (!$if_submitted){
-                        array_push($contests_arr,$contest);
+                    if ($if_submitted){
+                        $slots_filled = ContestSubmission::query()->where('contest_id',$contest->id)->count();
+                        $selected_coins = ContestCoin::query()
+                            ->where('contest_submission_id',$if_submitted->id)
+                            ->where('user_id',$user_id)
+                            ->get();
+                        $contest->selected_coins = $selected_coins;
+                        $contest->slots_filled = $slots_filled;
                     }
+                    array_push($contests_arr,$contest);
             }
             }
 
