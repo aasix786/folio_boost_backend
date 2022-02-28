@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bd2af37-33e6-4053-8d3f-1fde9d594545" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" afterDir="false" />
-    </list>
+    <list default="true" id="7bd2af37-33e6-4053-8d3f-1fde9d594545" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+            <state relative-caret-position="209">
+              <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -351,12 +348,12 @@
       <workItem from="1645462424633" duration="2238000" />
       <workItem from="1645475414613" duration="1742000" />
       <workItem from="1645515340154" duration="754000" />
-      <workItem from="1645632369287" duration="543000" />
+      <workItem from="1645632369287" duration="832000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38894000" />
+    <option name="totallyTimeSpent" value="39183000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1440" height="801" extended-state="6" />
@@ -576,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="30" column="44" lean-forward="true" selection-start-line="30" selection-start-column="44" selection-end-line="30" selection-end-column="44" />
+        <state relative-caret-position="209">
+          <caret line="31" column="36" lean-forward="true" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
         </state>
       </provider>
     </entry>
