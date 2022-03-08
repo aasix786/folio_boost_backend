@@ -72,10 +72,7 @@ Form Inputs
                     <label for="contest_slots">Contest Salary Cap</label>
                     <input type="number" class="form-control" id="contest_salary_cap" name="contest_salary_cap" placeholder="Enter Contest Salary Cap" value="{{@$contest_data->contest_salary_cap}}">
                 </div>
-                <div class="form-group col-md-4">
-                    <label for="contest_slots">Contest Salary</label>
-                    <input type="number" class="form-control" id="contest_salary" name="contest_salary" required placeholder="Enter Contest Salary" value="{{@$contest_data->salary}}">
-                </div>
+
                 <div class="form-group col-md-4">
                     <label for="contest_coins">Multiplier slot amount</label>
                     <select class="form-control" id="multiplier" name="multiplier_amount">
@@ -147,10 +144,7 @@ Form Inputs
                 <label for="contest_slots">Contest Salary Cap</label>
                 <input type="number" class="form-control" id="contest_salary_cap" name="contest_salary_cap" required placeholder="Enter Contest Salary Cap">
             </div>
-            <div class="form-group col-md-4">
-                <label for="contest_slots">Contest Salary</label>
-                <input type="number" class="form-control" id="contest_salary" name="contest_salary" required placeholder="Enter Contest Salary">
-            </div>
+
             <div class="form-group col-md-4">
                 <label for="contest_coins">Multiplier slot amount</label>
                 <select class="form-control" id="multiplier" name="multiplier_amount" required>

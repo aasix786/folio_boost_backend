@@ -48,13 +48,12 @@ class ContestController extends Controller
        $slots = $request->input('contest_slots');
        $coins_available = $request->input('coins_available');
        $contest_fee = $request->input('contest_fee');
-       $salary = $request->input('contest_salary');
        $contest_salary_cap = $request->input('contest_salary_cap');
        $multiplier_amount = $request->input('multiplier_amount');
        $description = $request->input('description');
 
 
-       if (!$name && !$duration && !$slots && !$coins_available && !$contest_fee && !$description && !$start_time && !$salary){
+       if (!$name && !$duration && !$slots && !$coins_available && !$contest_fee && !$description && !$start_time){
            return redirect()->back()->with('message','Please fill all fields');
        }
 
@@ -82,7 +81,6 @@ class ContestController extends Controller
            'slots' => $slots,
            'coins_available' => $coins_available,
            'entrance_fee' => $contest_fee,
-           'salary' => $salary,
            'contest_salary_cap' => $contest_salary_cap,
            'multiplier_amount' => $multiplier_amount,
            'prize' => $prize,
@@ -105,12 +103,11 @@ class ContestController extends Controller
        $slots = $request->input('contest_slots');
        $coins_available = $request->input('coins_available');
        $contest_fee = $request->input('contest_fee');
-        $salary = $request->input('contest_salary');
         $contest_salary_cap = $request->input('contest_salary_cap');
         $multiplier_amount = $request->input('multiplier_amount');
        $description = $request->input('description');
 
-        if (!$name && !$duration && !$slots && !$coins_available && !$contest_fee && !$description && !$start_time && !$salary){
+        if (!$name && !$duration && !$slots && !$coins_available && !$contest_fee && !$description && !$start_time ){
            return redirect()->back()->with('message','Please fill all fields');
        }
         $duration_int = (int) filter_var($duration, FILTER_SANITIZE_NUMBER_INT);
@@ -136,7 +133,6 @@ class ContestController extends Controller
             'slots' => $slots,
             'coins_available' => $coins_available,
             'entrance_fee' => $contest_fee,
-            'salary' => $salary,
             'contest_salary_cap' => $contest_salary_cap,
             'multiplier_amount' => $multiplier_amount,
             'prize' => $prize,

@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bd2af37-33e6-4053-8d3f-1fde9d594545" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ContestController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ContestController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Contest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ContestCoin.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ContestCoin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ContestSubmission.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ContestSubmission.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,21 +20,19 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="30" column="85" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
+            <state relative-caret-position="105">
+              <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContestController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="224" column="51" selection-start-line="224" selection-start-column="41" selection-end-line="224" selection-end-column="51" />
+            <state relative-caret-position="280">
+              <caret line="140" column="30" lean-forward="true" selection-start-line="140" selection-start-column="30" selection-end-line="140" selection-end-column="30" />
               <folding>
                 <element signature="e#40#63#0#PHP" expanded="true" />
-                <element signature="e#2911#4045#0#PHP" />
-                <element signature="e#4161#7550#0#PHP" />
                 <element signature="e#8230#8985#0#PHP" />
               </folding>
             </state>
@@ -100,17 +91,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="968">
-              <caret line="76" column="102" selection-start-line="76" selection-start-column="88" selection-end-line="76" selection-end-column="102" />
+            <state relative-caret-position="107">
+              <caret line="146" selection-start-line="146" selection-end-line="146" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Models/Contest.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="11" column="124" selection-start-line="11" selection-start-column="124" selection-end-line="11" selection-end-column="124" />
+              <caret line="11" column="116" selection-start-line="11" selection-start-column="116" selection-end-line="11" selection-end-column="116" />
             </state>
           </provider>
         </entry>
@@ -128,8 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>contest_fee</find>
-      <find>update-contest</find>
       <find>content_id</find>
       <find>slots</find>
       <find>name=&quot;contest_slots</find>
@@ -156,8 +145,10 @@
       <find>Multiplier slot amount</find>
       <find>$request-&gt;input('contest_fee');</find>
       <find>$contest_p</find>
-      <find>contest_start</find>
       <find>$contest_s</find>
+      <find>contest_salary</find>
+      <find>contest_start</find>
+      <find>$salary</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,8 +173,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/AuthController.php" />
         <option value="$PROJECT_DIR$/app/Models/ContestStartData.php" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php" />
-        <option value="$PROJECT_DIR$/app/Models/Contest.php" />
         <option value="$PROJECT_DIR$/app/Models/ContestCoin.php" />
         <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
@@ -191,7 +180,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/ApiControllers/ContestController.php" />
         <option value="$PROJECT_DIR$/app/Models/ContestEndData.php" />
         <option value="$PROJECT_DIR$/app/Models/ContestWinner.php" />
+        <option value="$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ContestController.php" />
+        <option value="$PROJECT_DIR$/app/Models/Contest.php" />
       </list>
     </option>
   </component>
@@ -447,12 +438,12 @@
       <workItem from="1646557471041" duration="7900000" />
       <workItem from="1646638727916" duration="22000" />
       <workItem from="1646643457102" duration="1113000" />
-      <workItem from="1646761423787" duration="7322000" />
+      <workItem from="1646761423787" duration="7590000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56447000" />
+    <option name="totallyTimeSpent" value="56715000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="25" width="1360" height="743" extended-state="6" />
@@ -637,20 +628,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Models/Contest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="124" selection-start-line="11" selection-start-column="124" selection-end-line="11" selection-end-column="124" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="968">
-          <caret line="76" column="102" selection-start-line="76" selection-start-column="88" selection-end-line="76" selection-end-column="102" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ContestCoin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -676,13 +653,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="30" column="85" selection-start-line="30" selection-start-column="85" selection-end-line="30" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Models/ContestEndData.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -704,16 +674,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Contest/add_contest.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="146" selection-start-line="146" selection-end-line="146" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="27" column="84" selection-start-line="27" selection-start-column="84" selection-end-line="27" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ContestController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="224" column="51" selection-start-line="224" selection-start-column="41" selection-end-line="224" selection-end-column="51" />
+        <state relative-caret-position="280">
+          <caret line="140" column="30" lean-forward="true" selection-start-line="140" selection-start-column="30" selection-end-line="140" selection-end-column="30" />
           <folding>
             <element signature="e#40#63#0#PHP" expanded="true" />
-            <element signature="e#2911#4045#0#PHP" />
-            <element signature="e#4161#7550#0#PHP" />
             <element signature="e#8230#8985#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Models/Contest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="11" column="116" selection-start-line="11" selection-start-column="116" selection-end-line="11" selection-end-column="116" />
         </state>
       </provider>
     </entry>

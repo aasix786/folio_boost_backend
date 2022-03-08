@@ -9,6 +9,6 @@ class Contest extends Model
 {
     use HasFactory;
     protected $table = "contests";
-    protected $fillable = ['id', 'name','duration','start_time','end_time','slots','coins_available', 'entrance_fee','salary', 'contest_salary_cap', 'multiplier_amount', 'prize','description','created_at','updated_at'];
+    protected $fillable = ['id', 'name','duration','start_time','end_time','slots','coins_available', 'entrance_fee', 'contest_salary_cap', 'multiplier_amount', 'prize','description','created_at','updated_at'];
     protected $hidden = [];
 }
