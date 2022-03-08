@@ -25,10 +25,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //........CONTESTS.........
 Route::get('/contests', [App\Http\Controllers\ContestController::class, 'index'])->name('getContests');
 Route::get('/add-contest', [App\Http\Controllers\ContestController::class, 'add_contest'])->name('addContest');
-Route::post('/submit-contest', [App\Http\Controllers\ContestController::class, 'submit_contest'])->name('submitContest');
-Route::post('/update-contest', [App\Http\Controllers\ContestController::class, 'update_contest'])->name('updateContest');
+Route::post('submit-contest', [App\Http\Controllers\ContestController::class, 'submit_contest'])->name('submitContest');
+Route::post('update-contest', [App\Http\Controllers\ContestController::class, 'update_contest'])->name('updateContest');
 Route::get('/edit-contest/{id}', [App\Http\Controllers\ContestController::class, 'edit_contest'])->name('editContest');
-
+Route::get('contest-start', [App\Http\Controllers\ContestController::class, 'contest_start']);
+Route::get('test', [App\Http\Controllers\ContestController::class, 'test']);
 
 
 
