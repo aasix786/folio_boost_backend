@@ -28,7 +28,6 @@ Route::get('/add-contest', [App\Http\Controllers\ContestController::class, 'add_
 Route::post('submit-contest', [App\Http\Controllers\ContestController::class, 'submit_contest'])->name('submitContest');
 Route::post('update-contest', [App\Http\Controllers\ContestController::class, 'update_contest'])->name('updateContest');
 Route::get('/edit-contest/{id}', [App\Http\Controllers\ContestController::class, 'edit_contest'])->name('editContest');
-Route::get('contest-start', [App\Http\Controllers\ContestController::class, 'contest_start']);
 Route::get('test', [App\Http\Controllers\ContestController::class, 'test']);
 
 

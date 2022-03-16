@@ -5,7 +5,10 @@ namespace App\Http\Controllers\ApiControllers;
 use App\Http\Controllers\Controller;
 use App\Models\Contest;
 use App\Models\ContestCoin;
+use App\Models\ContestEndData;
+use App\Models\ContestStartData;
 use App\Models\ContestSubmission;
+use App\Models\ContestWinner;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -205,6 +208,182 @@ $my_contests = [];
         }
 
         return json_encode($response);
+    }
+    public function contest_start(){
+        $contests_pending = Contest::query()->where('status',0)->get();
+        if (sizeof($contests_pending) > 0){
+            foreach ($contests_pending as $contest_p){
+                $start_time = $contest_p->start_time;
+                $current_time = Carbon::now();
+
+                $result = $current_time->gt($start_time);
+                // contest start logic
+                if($result){
+                    $update_contest_data = array(
+                        'status'=>1
+//                       'status'=>1
+                    );
+                    $update_contest_status = Contest::query()
+                        ->where('id',$contest_p->id)
+                        ->update($update_contest_data);
+                    if ($update_contest_status){
+                        $coins_data = $this->get_coins_data();
+                        if ($coins_data){
+                            $coins_arr = $coins_data;
+                            if (sizeof($coins_arr) > 0) {
+                                foreach ($coins_arr as $key => $coin) {
+                                    $add_coin_data = ContestStartData::create([
+                                        'contest_id' => $contest_p->id,
+                                        'symbol' => $coin->symbol,
+                                        'coin_id' => $coin->id,
+                                        'name' => $coin->name,
+                                        'price' => @$coin->quote->USD->price ? @$coin->quote->USD->price : @$coin->price,
+                                        'cmc_rank' => $coin->cmc_rank,
+                                        'market_cap' => @$coin->quote->USD->market_cap ? $coin->quote->USD->market_cap : $coin->market_cap,
+                                        'market_cap_dominance' => @$coin->quote->USD->market_cap_dominance ? @$coin->quote->USD->market_cap_dominance : @$coin->market_cap_dominance,
+                                    ]);
+                                    if ($add_coin_data){
+                                        $contest_submission_id = ContestSubmission::query()->where('contest_id',$contest_p->id)->pluck('id')->first();
+                                        if ($contest_submission_id){
+                                            $update_contest_coins_data = array(
+                                                'price' => @$coin->quote->USD->price ? @$coin->quote->USD->price : @$coin->price,
+                                                'cmc_rank' => $coin->cmc_rank,
+                                                'market_cap' => @$coin->quote->USD->market_cap ? $coin->quote->USD->market_cap : $coin->market_cap,
+                                                'market_cap_dominance' => @$coin->quote->USD->market_cap_dominance ? @$coin->quote->USD->market_cap_dominance : @$coin->market_cap_dominance,
+                                            );
+                                            $update_contest_coins = ContestCoin::query()
+                                                ->where('contest_submission_id',$contest_submission_id)
+                                                ->where('symbol',$coin->symbol)
+                                                ->update($update_contest_coins_data);
+
+                                        }
+
+                                    }
+
+                                }
+                            }
+
+                        }else{
+                            echo "failed to fetch coins data";
+                        }
+
+                    }
+
+
+
+                }
+                // contest end logic
+
+            }
+        }
+        $contests_started = Contest::query()->where('status',1)->get();
+        if (sizeof($contests_started) > 0){
+            foreach ($contests_started as $contest_s){
+                $end_time = $contest_s->end_time;
+                $current_time = Carbon::now();
+
+                $result = $current_time->gt($end_time);
+                if($result){
+                    $update_contest_data = array(
+                        'status'=>2
+                    );
+                    $update_contest_status = Contest::query()
+                        ->where('id',$contest_s->id)
+                        ->update($update_contest_data);
+                    if ($update_contest_status){
+                        $coins_data = $this->get_coins_data();
+                        if ($coins_data){
+                            $coins_arr = $coins_data;
+                            if (sizeof($coins_arr) > 0) {
+                                foreach ($coins_arr as $key => $coin) {
+                                    $add_coin_data = ContestEndData::create([
+                                        'contest_id' => $contest_s->id,
+                                        'symbol' => $coin->symbol,
+                                        'coin_id' => $coin->id,
+                                        'name' => $coin->name,
+                                        'price' => @$coin->quote->USD->price ? @$coin->quote->USD->price : @$coin->price,
+                                        'cmc_rank' => $coin->cmc_rank,
+                                        'market_cap' => @$coin->quote->USD->market_cap ? $coin->quote->USD->market_cap : $coin->market_cap,
+                                        'market_cap_dominance' => @$coin->quote->USD->market_cap_dominance ? @$coin->quote->USD->market_cap_dominance : @$coin->market_cap_dominance,
+                                    ]);
+
+                                }
+                            }
+
+                        }else{
+                            echo "failed to fetch coins data";
+                        }
+
+                    }
+
+
+
+
+                }
+
+                $contest_starting_data = ContestSubmission::query()->where('contest_id',$contest_s->id)->get();
+                if (sizeof($contest_starting_data) > 0){
+                    $final_arr = [];
+                    foreach ($contest_starting_data as $submission){
+                        $submitted_coins = ContestCoin::query()
+                            ->where('contest_submission_id', $submission->id)
+                            ->where('user_id', $submission->user_id)
+                            ->get();
+
+                        if (sizeof($submitted_coins) > 0){
+                            $user_total_portfolio_change = 0;
+                            foreach ($submitted_coins as $submitted_coin){
+                                $coin_symbol = $submitted_coin->symbol;
+                                $coin_price = $submitted_coin->price;
+                                $coin_investment = $submitted_coin->investment;
+
+                                $closed_coin_data = ContestEndData::query()
+                                    ->where('contest_id',$contest_s->id)
+                                    ->where('symbol',$coin_symbol)
+                                    ->first();
+
+                                if ($closed_coin_data){
+                                    $coin_price_closed = $closed_coin_data->price;
+
+                                    $difference_price_coin = (int)$coin_price_closed - (int)$coin_price;
+                                    $user_total_portfolio_change = $user_total_portfolio_change + $difference_price_coin;
+
+                                }else{
+                                    break;
+                                }
+
+
+                            }
+                            $obj = [
+                                'user_id' => $submission->user_id,
+                                'portfolio' => $user_total_portfolio_change
+                            ];
+                            array_push($final_arr,$obj);
+                        }
+
+                    }
+                    $final_arr = json_encode($final_arr);
+                    $final_arr = json_decode($final_arr);
+                    if(sizeof($final_arr) > 0){
+                        usort($final_arr,function($a, $b) {
+                            return $a->portfolio < $b->portfolio;
+                        });
+
+                        $winner_obj = @$final_arr[0];
+                        if ($winner_obj){
+                            $add_winner = ContestWinner::create([
+                                'contest_id' => $contest_s->id,
+                                'user_id' => $winner_obj->user_id,
+                                'portfolio' => $winner_obj->portfolio + $contest_s->contest_salary_cap,
+                            ]);
+
+                        }
+                    }
+
+
+                }
+            }
+        }
     }
 
 }

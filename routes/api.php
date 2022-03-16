@@ -20,3 +20,5 @@ Route::post('get-upcoming-contests', [\App\Http\Controllers\ApiControllers\Conte
 Route::post('get-contests-details', [\App\Http\Controllers\ApiControllers\ContestController::class, 'contest_details']);
 Route::post('submit-contest', [\App\Http\Controllers\ApiControllers\ContestController::class, 'submit_contest']);
 Route::post('my-contests', [\App\Http\Controllers\ApiControllers\ContestController::class, 'my_contests']);
+Route::get('contest-start', [App\Http\Controllers\ApiControllers\ContestController::class, 'contest_start']);
+
